@@ -135,8 +135,70 @@ def prix_a_payer():
     else:
         print("Vous devez payer: ",prix)
 
-prix_a_payer()
+#prix_a_payer()
 
 #Exo 9
 
 
+def reduction():
+    prix = int(input("Saisir le prix réel: "))
+
+    if 200 < prix < 500:
+        print("Vous devez payer: ", (prix - (prix/100)))
+    elif 500 < prix < 700:
+        print("Vous devez payer: ", (prix - (prix/100*2)))
+    elif prix > 700:
+        print("Vous devez payer: ", (prix - (prix / 100 * 3)))
+
+
+#reduction()
+
+
+#Exo 10
+
+p = int(input("Saissisez la puissance: "))
+d = int(input("Saissisez le kilométrage: "))
+
+def kilometres(p, d):
+    if p <= 3:
+        if d < 5000:
+            return d*0.502
+        elif 5000 < d <= 20000:
+            return (d*0.3) + 1007
+        else:
+            return d*0.35
+
+    elif p == 4:
+        if d < 5000:
+            return d*0.575
+        elif 5000 < d <= 20000:
+            return (d*0.323) + 1262
+        else:
+            return d*0.387
+
+    elif p == 5:
+        if d < 5000:
+            return d * 0.603
+        elif 5000 < d <= 20000:
+            return (d * 0.339) + 1320
+        else:
+            return d * 0.405
+
+    elif p == 6:
+        if d < 5000:
+            return d * 0.631
+        elif 5000 < d <= 20000:
+            return (d * 0.355) + 1382
+        else:
+            return d * 0.425
+
+    elif p >= 7:
+        if d < 5000:
+            return d * 0.661
+        elif 5000 < d <= 20000:
+            return (d * 0.374) + 1435
+        else:
+            return d * 0.446
+
+
+print("L'indemnité kilométrique pour", d, "kilomètres, avec une voiture de puissance", p, "est: ", kilometres(p, d))
